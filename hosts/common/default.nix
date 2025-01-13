@@ -2,5 +2,5 @@
   imports = [
     ./global
     ./optional
-  ]
+  ];
 }

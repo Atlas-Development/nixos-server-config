@@ -34,14 +34,16 @@
       */
       nixosConfigurations = {
 
-        "atlasmc-prod" = nixpkgs.lib.nixosSystem {
+        "atlasmc-test" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           # Pass all Inputs to the modules
           specialArgs = { inherit inputs outputs; };
 
           modules = [
-            ./hosts/atlasmc-prod
+            ./hosts/atlasmc-test
+            ./users/xaver106
+            ./users/endodd
           ];
         };
       };

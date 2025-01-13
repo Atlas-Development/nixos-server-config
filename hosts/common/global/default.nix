@@ -7,6 +7,7 @@
   ];
 
   config = {
-    users.mutableUsers = false;
+    environment.enableAllTerminfo = true;
+    system.stateVersion = "24.11";
   };
 }
