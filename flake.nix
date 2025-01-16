@@ -29,6 +29,11 @@
       # ===== Overlays =====
       overlays = import ./overlays { inherit inputs; };
 
+      # ===== Modules =====
+      nixosModules = {
+        minecraft = import ./modules/minecraft.nix;
+      };
+
       /**
         ***** Nixos Configurations ******
       */

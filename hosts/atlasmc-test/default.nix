@@ -3,6 +3,7 @@
   lib,
   config,
   inputs,
+  outputs,
   ...
 }:
 {
@@ -10,10 +11,21 @@
     ../common
     ./hardware-configuration.nix
     ./networking.nix # generated at runtime by nixos-infect
+    outputs.nixosModules.minecraft
   ];
-  
-  networking.hostName = "atlasmc-test";
-  boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
-  networking.domain = "";
+
+  config = {
+
+    networking.hostName = "atlasmc-test";
+    boot.tmp.cleanOnBoot = true;
+    zramSwap.enable = true;
+    networking.domain = "";
+
+    atlas.services.minecraft-servers = {
+      "survival" = {
+        enable = true;
+        dataDir = "/opt/minecraft/survival";
+      };
+    };
+  };
 }
