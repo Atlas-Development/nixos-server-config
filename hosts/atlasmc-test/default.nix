@@ -18,8 +18,6 @@
     zramSwap.enable = true;
     networking.domain = "";
 
-    atlas.optional.minecraft.enable = true;
-
     services.minecraft-servers = {
       enable = true;
       eula = true;
