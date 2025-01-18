@@ -12,9 +12,11 @@
     initialHashedPassword = "$6$Wij.Kslb8PRHdrrW$iXgOo.cSHVZnI52x7z.Y1rUbxy/uWHYd5aRu1VUWhEa6IQdfnqo56Itt0iCwmiIoVrXIGP31IWs8zozxLRAtF0";
     extraGroups = [
       "wheel"
+      "minecraft"
     ];
     /*
       wheel: Group that can use sudo
+      minecraft: Acces to minecraft server files and tmux console
     */
 
     openssh.authorizedKeys.keys = [

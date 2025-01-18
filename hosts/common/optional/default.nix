@@ -1,3 +1,5 @@
 {
-  
+  inputs = [
+    ./minecraft.nix
+  ];
 }

@@ -12,9 +12,11 @@
     initialHashedPassword = "$y$j9T$CBdwPc0ywLZO4w1wsrFZu/$lqX9iLC3cJoIA0xV8y/cCnl9jBczDmnrnTWqUAiq1N/";
     extraGroups = [
       "wheel"
+      "minecraft"
     ];
     /*
       wheel: Group that can use sudo
+      minecraft: Acces to minecraft server files and tmux console
     */
     shell = pkgs.fish;
 
