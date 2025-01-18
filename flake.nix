@@ -3,7 +3,7 @@
 
   inputs = {
 
-    # Official NixOS package sources 
+    # Official NixOS package sources
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
@@ -41,6 +41,22 @@
         ***** Nixos Configurations ******
       */
       nixosConfigurations = {
+
+        nixosConfigurations = {
+
+          "atlasmc-prod" = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+
+            # Pass all Inputs to the modules
+            specialArgs = { inherit inputs outputs; };
+
+            modules = [
+              ./hosts/atlasmc-prod
+              ./users/xaver106
+              ./users/endodd
+            ];
+          };
+        };
 
         "atlasmc-test" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
