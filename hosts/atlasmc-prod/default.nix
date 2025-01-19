@@ -8,11 +8,13 @@
   imports = [
     ../common
     ./hardware-configuration.nix
+    ./networking.nix
   ];
 
   config = {
 
     networking.hostName = "atlasmc-prod";
+    services.qemuGuest.enable = true;
 
     # services.minecraft-servers = {
     #   enable = true;
@@ -27,6 +29,6 @@
     #     };
     #   };
     # };
-
+    
   };
 }
