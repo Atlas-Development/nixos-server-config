@@ -17,10 +17,10 @@
       "velocity" = {
         enable = true;
         openFirewall = true;
-        package = pkgs.velocityServers-3_4_0-SNAPSHOT-build."461";
+        package = pkgs.velocityServers.velocity-3_4_0-SNAPSHOT-build_461;
         jvmOpts = "-Xms1024M -Xmx1024M -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
 
-        stopCommand = "end";
+        stopCommand = "shutdown";
       };
       
     };
