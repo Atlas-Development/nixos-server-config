@@ -46,5 +46,13 @@
     wget # File download
     dig # DNS lookup
     speedtest-cli # Internet speed test
+
+    # Formatting Tools
+    treefmt2
+
+    # Nix
+    nil # Nix LSP
+    nixd
+    nixfmt-rfc-style # Nix formatter
   ];
 }

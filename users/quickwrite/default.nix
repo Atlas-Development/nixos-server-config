@@ -13,9 +13,7 @@
     extraGroups = [
       "wheel"
     ];
-    /*
-      wheel: Group that can use sudo
-    */
+    # wheel: Group that can use sudo
 
     openssh.authorizedKeys.keys = [
       ""
