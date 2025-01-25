@@ -15,6 +15,11 @@
     # Nix-Minecraft
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
+    # Sops-nix
+    # sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    #sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs =
