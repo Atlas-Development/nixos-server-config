@@ -11,17 +11,19 @@
   # };
   services.hedgedoc = {
     enable = true;
-    settings.domain = "md.atlasmc.net";
-    settings.port = 8001; 
-    settings.host = "0.0.0.0"; # IP of the VM (or public IP of webserver)
-    settings.protocolUseSSL = true;
-    settings.allowOrigin = [
-        "localhost"
-        "md.atlasmc.net"
-    ];
+    settings = {
+      domain = "md.atlasmc.net";
+      port = 8001; 
+      host = "0.0.0.0"; # IP of the VM (or public IP of webserver)
+      protocolUseSSL = true;
+      allowOrigin = [
+          "localhost"
+          "md.atlasmc.net"
+      ];
 
-    allowEmailRegister = false;
-    allowAnonymous = false;
+      allowEmailRegister = false;
+      allowAnonymous = false;
+    };
   };
 
   services.nginx = {
