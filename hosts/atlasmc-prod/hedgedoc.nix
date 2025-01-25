@@ -19,6 +19,9 @@
         "localhost"
         "md.atlasmc.net"
     ];
+
+    allowEmailRegister = false;
+    allowAnonymous = false;
   };
 
   services.nginx = {
@@ -62,5 +65,9 @@
     acceptTerms = true;
     defaults.email = "fif6qz3gt@mozmail.com";
   };
+
+  environment.systemPackages = with pkgs; [
+    hedgedoc
+  ];
 
 }
