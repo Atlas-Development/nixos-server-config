@@ -39,7 +39,7 @@
       root = "/var/www/hedgedoc";
       locations."/".proxyPass = "http://127.0.0.1:8001";
       locations."/socket.io/" = {
-        proxyPass = "http://192.168.1.100:8001";
+        proxyPass = "http://127.0.0.1:8001";
         proxyWebsockets = true;
         extraConfig =
           "proxy_ssl_server_name on;"
