@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./minecraft-servers.nix
     ./networking.nix
+    ./hedgedoc.nix
   ];
 
   config = {
