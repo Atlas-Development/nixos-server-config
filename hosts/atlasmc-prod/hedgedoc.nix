@@ -34,18 +34,28 @@
     sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
 
     virtualHosts."md.atlasmc.net" = {
-        forceSSL = true;
-        enableACME = true;
-        root = "/var/www/hedgedoc";
-        locations."/".proxyPass = "http://127.0.0.1:8001";
-        locations."/socket.io/" = {
-          proxyPass = "http://192.168.1.100:8001";
-          proxyWebsockets = true;
-          extraConfig =
-            "proxy_ssl_server_name on;"
-            ;
-        };
+      forceSSL = true;
+      enableACME = true;
+      root = "/var/www/hedgedoc";
+      locations."/".proxyPass = "http://127.0.0.1:8001";
+      locations."/socket.io/" = {
+        proxyPass = "http://192.168.1.100:8001";
+        proxyWebsockets = true;
+        extraConfig =
+          "proxy_ssl_server_name on;"
+          ;
+      };
+      locations."/robots.txt" = {
+        extraConfig = ''
+          rewrite ^/(.*)  $1;
+          return 200 "User-agent: *\nDisallow: /";
+        '';
+      };
     };
+  };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 80 443 ];
   };
 
   security.acme = {
