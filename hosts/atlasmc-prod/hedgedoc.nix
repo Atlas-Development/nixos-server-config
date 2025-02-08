@@ -23,6 +23,7 @@
 
       allowEmailRegister = false;
       allowAnonymous = false;
+      allowAnonymousEdits = true;
     };
   };
 
