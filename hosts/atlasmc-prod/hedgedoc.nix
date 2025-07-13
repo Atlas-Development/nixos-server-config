@@ -73,4 +73,9 @@
     hedgedoc
   ];
 
+  /*
+    To manage users locally use:
+    $ sudo CMD_CONFIG_FILE=/run/hedgedoc/config.json NODE_ENV=production manage_users
+  */
+
 }

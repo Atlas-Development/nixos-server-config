@@ -52,6 +52,7 @@
             ./hosts/atlasmc-prod
             ./users/xaver106
             ./users/endodd
+            ./users/gamecrash
           ];
         };
 
