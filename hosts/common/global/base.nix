@@ -48,7 +48,7 @@
     speedtest-cli # Internet speed test
 
     # Formatting Tools
-    treefmt2
+    treefmt
 
     # Nix
     nil # Nix LSP

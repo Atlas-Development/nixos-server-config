@@ -40,6 +40,7 @@
     sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
 
     virtualHosts."md.atlasmc.net" = {
+      serverName = "md.atlasmc.net";
       forceSSL = true;
       enableACME = true;
       root = "/var/www/hedgedoc";
