@@ -39,24 +39,32 @@
     # Only allow PFS-enabled ciphers with AES256
     sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
 
-    virtualHosts."md.atlasmc.net" = {
-      serverName = "md.atlasmc.net";
-      forceSSL = true;
-      enableACME = true;
-      root = "/var/www/hedgedoc";
-      locations."/".proxyPass = "http://127.0.0.1:8001";
-      locations."/socket.io/" = {
-        proxyPass = "http://127.0.0.1:8001";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          ;
+    virtualHosts = {
+      "_default" = {
+        default = true;
+        rejectSSL = true;
+        locations."/" = {
+          return = "444";  # Close connection
+        };
       };
-      locations."/robots.txt" = {
-        extraConfig = ''
-          rewrite ^/(.*)  $1;
-          return 200 "User-agent: *\nDisallow: /";
-        '';
+      "md.atlasmc.net" = {
+        forceSSL = true;
+        enableACME = true;
+        root = "/var/www/hedgedoc";
+        locations."/".proxyPass = "http://127.0.0.1:8001";
+        locations."/socket.io/" = {
+          proxyPass = "http://127.0.0.1:8001";
+          proxyWebsockets = true;
+          extraConfig =
+            "proxy_ssl_server_name on;"
+            ;
+        };
+        locations."/robots.txt" = {
+          extraConfig = ''
+            rewrite ^/(.*)  $1;
+            return 200 "User-agent: *\nDisallow: /";
+          '';
+        };
       };
     };
   };
